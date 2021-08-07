@@ -1,0 +1,180 @@
+/*
+
+Coi CSS của mình có 2 tần vực
+    1.Tần vực bên ngoài Media Query (style.css)
+    2.Tần vực bên trong Media Query (responsive.css)
+
+Xu hướng Responsive
+    1.Mobile first -> Code ở màn hình mobile đầu tiên -> Đẩy dần lên desktop -> Điều kiện
+    cận bên dưới
+    Tầm vực file style.css -> Toàn bộ CSS trong đây sẽ chạy được trên tất cả các màn hình -> Code dưới mobile trước
+    Vd: Một layout chia thành 4 colmn
+    -style.css {
+        width: 100%:
+    }
+    -responsive.css
+        Nếu màn hình >= 568px
+            .comlumn-4 {
+                width: 50% -> Đè lại code width: 100%;
+            }
+        
+        Nếu màn hình >= 768px -> Máy tính bảng
+            .column-4 {
+                width: 50% -> Đè lại code width: 100%;
+            }
+
+        Nếu màn hình >= 768px -> Máy tính bảng
+            .column-4 {
+                width: 50% -> Đè lại code width: 100%;
+            }
+
+        Nếu màn hình >= 1170px
+            .column-4 {
+                width: 25px;
+            }
+    2.Desktop First (non-mobile first ) -> Code ở màn hình desktop đầu tiên
+    Vd: Một layout chia thành 4 column
+    -style.css 
+        .column-4 {
+            width: 25%;
+        }
+
+    -responsive.css
+        Nếu màn hình <= 1169px;
+            .column-4 {
+                width: 33.3333%;
+            }
+
+        Nếu màn hình <= 767px;
+            .column-4 {
+                width: 50%;
+            }
+
+        Nếu màn hình <= 567px;
+            .column-4 {
+                width: 100%
+            }
+
+    3,..
+    -responsive.css
+            Nếu màn hình <= 1169px và >= 768px
+                .column-4 {
+                    width: 33.3333%
+                }
+
+            Nếu màn hình <= 767px và >= 568px
+                .column-4 {
+                    width: 50%;
+                }
+
+*/
+    @media only screen and (max-width: 991px) {
+        .col-9, .col-3 {
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        .sidebar {
+            padding-top: 15px;
+        }
+
+        .header {
+            padding-bottom: 20px;
+        }
+
+        .header .wrapper-logo {
+            margin-bottom: 10px;
+        }
+
+        .tcl-column-4 .item {
+            width: 33.3333% !important;
+        }
+
+        .tcl-column-4 .item:nth-child(4) {
+            margin-top: 30px !important;
+        }
+    }
+
+    /*Máy tính bảng 768px*/
+    @media only screen and (max-width: 767px) {
+        .tcl-column-4 .item {
+            width: 50% !important;
+        }
+
+        .tcl-column-4 .item:nth-child(3) {
+            margin-top: 30px !important;
+        }
+
+        .menu > li {
+            float: none;
+        }
+     
+        body {
+            overflow-x: hidden;
+        }
+    
+        .menu {
+            background-color: #fff;
+            position: fixed;
+            left: 0;
+            transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+        }
+    
+        .header .logo img {
+            max-width: 130px;
+        }
+    
+        .header .hotline span {
+            font-size: 18px;
+        }
+    
+        .header .hotline > img {
+            width: 25px;
+        }
+    
+        .header .logo, .header .hotline {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+    
+    }
+
+    
+    @media only screen and (max-width: 480px) {
+        .tcl-column-4 .item {
+            width: 100% !important;
+        }
+        .tcl-column-4 .item:nth-child(2) {
+            margin-top: 30px !important;
+        }
+        
+        .welcome .title{
+            font-size: 20px;
+        }
+
+        .ad .title {
+            font-size: 18px;
+        }
+
+        .ad .sub-title {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .menu ul {
+            top: 44;
+            width: 140px;
+        }
+        
+        .mySlides img {
+            height: 71vh;
+        }
+    }
+
+    
